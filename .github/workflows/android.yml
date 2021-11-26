@@ -1,45 +1,58 @@
+name: Buildozer
 on: [push, pull_request]
-name: Android
+
+env:
+  buildozer_workdir: launcher
+  #buildozer_version: git+https://github.com/misl6/buildozer.git@feat/aab-support
+  buildozer_version: git+https://github.com/antocuni/buildozer.git@antocuni/aab-support-and-fileprovider
+
+  # buildozer_workdir: Storage-Example
+  # buildozer_version: stable
+
 jobs:
-  Integration:
-    strategy:
-      matrix:
-        os:
-          - 'ubuntu-latest'
-          - 'macOs-latest'
-    runs-on: ${{ matrix.os }}
+
+  android_debug:
+    name: Android (debug)
+    runs-on: ubuntu-latest
+
     steps:
-    - name: Setup python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.9
-    - uses: actions/checkout@v2
-    - name: Setup environment
-      run: |
-        pip install -e .
-        pip install Cython
-    - run: buildozer --help
-    - run: buildozer init
-    - name: SDK, NDK and p4a download
-      run: |
-        sed -i.bak "s/# android.accept_sdk_license = False/android.accept_sdk_license = True/" buildozer.spec
-        sed -i.bak "s/#p4a.branch = master/p4a.branch = develop/" buildozer.spec
-        buildozer android p4a -- --help
-    # Install OS specific dependencies
-    - name: Install Linux dependencies
-      if: matrix.os == 'ubuntu-latest'
-      run: sudo apt -y install automake
-    - name: Install macOS dependencies
-      if: matrix.os == 'macOS-latest'
-      run: |
-        brew install automake
-        sudo ln -sfn /usr/local/opt/openssl /usr/local/ssl
-    - name: buildozer android debug
-      run: |
-        touch main.py
-        buildozer android debug
-    - name: buildozer android release (aab)
-      run: |
-        touch main.py
-        export BUILDOZER_ALLOW_ORG_TEST_DOMAIN=1
-        buildozer android release
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build with Buildozer
+        uses: ArtemSBulgakov/buildozer-action@v1
+        id: buildozer
+        with:
+          workdir: ${{ env.buildozer_workdir }}
+          buildozer_version: ${{ env.buildozer_version }}
+          command: buildozer android debug
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: debug
+          path: ${{ steps.buildozer.outputs.filename }}
+
+
+  android_release:
+    name: Android (release)
+    runs-on: ubuntu-latest
+    if: "contains(github.event.head_commit.message, 'release')"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build with Buildozer
+        uses: ArtemSBulgakov/buildozer-action@v1
+        id: buildozer
+        with:
+          workdir: ${{ env.buildozer_workdir }}
+          buildozer_version: ${{ env.buildozer_version }}
+          command: buildozer --profile aab android release
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: release
+          path: ${{ steps.buildozer.outputs.filename }}

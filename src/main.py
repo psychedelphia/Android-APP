@@ -1,20 +1,29 @@
-'''
-'''
+import kivy
+ 
+kivy.require('2.0.0')
+ 
 from kivy.app import App
-from kivy.lang import Builder
-
-
-KV = '''
-Label:
-    text: 'pretty! \\nAnimation by yosif (https://lottiefiles.com/yoz)\\nAvailable at https://lottiefiles.com/42369-weather-wind'
-    text_size: self.width, None
-    halign: 'center'
-'''
-
-class Application(App):
+from kivy.core.window import Window
+from kivy.uix.floatlayout import FloatLayout
+from kivy.graphics import Color, Line
+ 
+Window.clearcolor = (.6, 1, .8, 1)
+Window.size = (563, 1001)
+Window.top, Window.left = 30, 800
+ 
+ 
+class TestApp(App):
     def build(self):
-        return Builder.load_string(KV)
-
-
-if __name__ == "__main__":
-    Application().run()
+        fl = FloatLayout()
+ 
+        # using canvas
+        ta = Line(width=10, cap='none', joint='round', close='False',
+                  rectangle=(200, 500, 163, 300))
+        fl.canvas.add(Color(0, .5, 0, 1))
+        fl.canvas.add(ta)
+ 
+        return fl
+ 
+ 
+TestApp().run()
+ 

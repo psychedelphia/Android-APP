@@ -17,6 +17,7 @@ jobs:
           pip install pipenv-to-requirements
           pipenv lock
           pipenv_to_requirements
+          pip --version
           
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1

@@ -12,7 +12,7 @@ jobs:
     - uses: dschep/install-pipenv-action@v1
     - name: Update requirements
       run: |
-          python -m pip install --upgrade pip
+          python3 -m pip install --upgrade pip
           pip install pipenv-to-requirements
           pipenv lock
           pipenv_to_requirements

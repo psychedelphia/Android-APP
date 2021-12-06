@@ -2,6 +2,21 @@ name: Build
 on: [push, pull_request]
 
 jobs:
+  update-requirements:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - uses: dschep/install-pipenv-action@v1
+    - name: Update requirements
+      run: |
+          python -m pip install --upgrade pip
+          pip install pipenv-to-requirements
+          pipenv lock
+          pipenv_to_requirements
+
   build-android:
     name: Build for Android
     runs-on: ubuntu-latest

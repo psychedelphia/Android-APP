@@ -24,15 +24,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Upgrade Pip
-        run: |
-          pip --version
-          /bin/python3 -m pip install --upgrade pip
-          pip install pipenv-to-requirements
-          pipenv lock
-          pipenv_to_requirements
-          pip --version
   
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1

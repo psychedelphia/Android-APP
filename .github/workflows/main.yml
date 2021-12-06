@@ -11,8 +11,19 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Upgrade Pip
-        with:
-          command: /bin/python3 -m pip install --upgrade pip
+        run: |
+          python -m pip install --upgrade pip
+          pip install pipenv-to-requirements
+          pipenv lock
+          pipenv_to_requirements
+          git add requirements*.txt
+          if [[ -n $(git status -s requirements*.txt) ]]
+          then
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git commit -m 'Automatically generated requirements' requirements*.txt
+            git push
+          fi
 
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1

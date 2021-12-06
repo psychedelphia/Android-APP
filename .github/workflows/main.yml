@@ -18,6 +18,7 @@ jobs:
           pipenv lock
           pipenv_to_requirements
           pip --version
+          git status -s
           
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1

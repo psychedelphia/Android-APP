@@ -16,15 +16,7 @@ jobs:
           pip install pipenv-to-requirements
           pipenv lock
           pipenv_to_requirements
-          git add requirements*.txt
-          if [[ -n $(git status -s requirements*.txt) ]]
-          then
-            git config --local user.email "action@github.com"
-            git config --local user.name "GitHub Action"
-            git commit -m 'Automatically generated requirements' requirements*.txt
-            git push
-          fi
-
+          
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer

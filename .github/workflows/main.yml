@@ -18,6 +18,9 @@ jobs:
       - name: Upgrade Pip  # Step 3
         run: |
           python3 -m pip install --upgrade pip
+      - name: Upgrade Apt
+        run: |
+          sudo apt update
       - name: Install Cython 
         run: |
           pip3 install --user --upgrade Cython==0.29.19 virtualenv

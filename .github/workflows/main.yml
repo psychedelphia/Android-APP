@@ -7,7 +7,16 @@ jobs:
     runs-on: ubuntu-latest  # OS
 
     steps:
-      - name: Actions Checkout  # Name of Step 1
+      - name: Actions Checkout  # Step 1
         uses: actions/checkout@v2
         with:
           path: master  # /home/runner/work/Android-APP/Android-APP/master
+      - name: Setup Python  # Step 2
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8  # 3.6 or 3.7
+      - name:  Upgrade Pip  # Step 3
+        run: |
+          python3 -m pip install --upgrade pip
+        
+          

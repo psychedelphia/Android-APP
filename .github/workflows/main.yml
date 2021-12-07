@@ -7,15 +7,15 @@ jobs:
     runs-on: ubuntu-latest  # OS
 
     steps:
-      - name: Actions Checkout  # Step 1
+      - name: Actions Checkout
         uses: actions/checkout@v2
         with:
           path: master  # /home/runner/work/Android-APP/Android-APP/master
-      - name: Setup Python  # Step 2
+      - name: Setup Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.8  # 3.6 or 3.7
-      - name: Upgrade Pip  # Step 3
+      - name: Upgrade Pip
         run: |
           python3 -m pip install --upgrade pip
       - name: Install Cython 
@@ -54,9 +54,9 @@ jobs:
           gstreamer1.0-plugins-good
       - name: Init Buildozer
         run: |
-          cd ./master/src
           buildozer init
       - name: Make APK
         run: |
+          cd ./master/src
           buildozer -v android debug          
 

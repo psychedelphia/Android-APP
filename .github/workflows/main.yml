@@ -21,3 +21,6 @@ jobs:
       - name: Install Cython 
         run: |
           pip3 install --user --upgrade Cython==0.29.19 virtualenv
+      - name: Export Android APK file
+        run: |
+          export PATH=$PATH:~/.local/bin/

@@ -24,6 +24,4 @@ jobs:
       - name:  Upgrade Pip  # Step 3
         run: |
           python3 -m pip install --upgrade pip
-      - name: Setup Environment  # Step 4
-        
           

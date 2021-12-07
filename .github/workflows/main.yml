@@ -20,4 +20,4 @@ jobs:
           python3 -m pip install --upgrade pip
       - name: Upgrade Apt  # Step 4
         run: |
-          apt update -qq > /dev/null
+          apt update

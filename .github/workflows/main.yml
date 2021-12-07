@@ -29,6 +29,7 @@ jobs:
           pip install buildozer
       - name: Install necessary system packages
         run: |
+          sudo apt-get update
           sudo apt-get install -y \
           python3-pip \
           build-essential \

@@ -1,13 +1,13 @@
-name: Build
+name: Android APK  # Name
 on: [push, pull_request]
 
 jobs:
   build-android:
-    name: Build for Android
-    runs-on: ubuntu-latest
+    name: Build for Android  # Name
+    runs-on: ubuntu-latest  # OS
 
     steps:
-      - name: Checkout
+      - name: Action Checkout  # Name of Step 1
         uses: actions/checkout@v2
         with:
           path: master

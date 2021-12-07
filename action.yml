@@ -1,6 +1,6 @@
 name: Buildozer action
 description: Build Python package with Kivy Buildozer
-author: Artem Bulgakov
+author: Psychedelphia
 branding:
   icon: package
   color: yellow

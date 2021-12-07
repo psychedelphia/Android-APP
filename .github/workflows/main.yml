@@ -30,11 +30,11 @@ jobs:
       - name: Install necessary system packages
         run: |
           sudo apt-get install -y \
-          python-pip \
+          python3-pip \
           build-essential \
           git \
-          python \
-          python-dev \
+          python3 \
+          python3-dev \
           ffmpeg \
           libsdl2-dev \
           libsdl2-image-dev \
@@ -51,3 +51,14 @@ jobs:
           libgstreamer1.0 \
           gstreamer1.0-plugins-base \
           gstreamer1.0-plugins-good
+      - name: Init Buildozer
+        run: |
+          buildozer init
+      - name: Git Clone
+        run: |
+          git clone <git-link-of-forked-repo>
+      - name: Make APK
+        run: |
+          cd src
+          buildozer -v android debug          
+

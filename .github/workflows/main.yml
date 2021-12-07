@@ -58,5 +58,6 @@ jobs:
       - name: Make APK
         run: |
           cd ./master/src
+          ls -al
           buildozer -v android debug      
 

@@ -54,7 +54,7 @@ jobs:
           gstreamer1.0-plugins-good
       - name: Init Buildozer
         run: |
-          cd src
+          ls -al
           buildozer init
       - name: Make APK
         run: |

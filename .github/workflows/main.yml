@@ -24,3 +24,6 @@ jobs:
       - name: Export Android APK file
         run: |
           export PATH=$PATH:~/.local/bin/
+      - name: Install buildozer
+        run: pip install buildozer
+          

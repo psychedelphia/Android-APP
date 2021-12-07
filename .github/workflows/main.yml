@@ -18,5 +18,12 @@ jobs:
       - name:  Upgrade Pip  # Step 3
         run: |
           python3 -m pip install --upgrade pip
+      - name: Setup Environment  # Step 4
+        env: |
+          USER: "user"
+          HOME_DIR: "/home/${USER}"
+          WORK_DIR: "${HOME_DIR}/hostcwd"
+          SRC_DIR:' "${HOME_DIR}/src" 
+          PATH: "${HOME_DIR}/.local/bin:${PATH}"
         
           

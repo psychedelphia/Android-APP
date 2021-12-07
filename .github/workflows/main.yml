@@ -56,9 +56,6 @@ jobs:
         run: |
           cd src
           buildozer init
-      - name: Git Clone
-        run: |
-          git clone <git-link-of-forked-repo>
       - name: Make APK
         run: |
           buildozer -v android debug          

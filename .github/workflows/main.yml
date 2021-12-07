@@ -57,6 +57,6 @@ jobs:
           buildozer init
       - name: Make APK
         run: |
-          cd ./master/src
-          buildozer -v android debug          
+          cd /action/src
+          buildozer -v android debug      
 

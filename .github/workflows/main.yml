@@ -54,12 +54,12 @@ jobs:
           gstreamer1.0-plugins-good
       - name: Init Buildozer
         run: |
+          cd src
           buildozer init
       - name: Git Clone
         run: |
           git clone <git-link-of-forked-repo>
       - name: Make APK
         run: |
-          cd src
           buildozer -v android debug          
 

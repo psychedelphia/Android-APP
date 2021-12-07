@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest  # OS
 
     steps:
-      - name: Action Checkout  # Name of Step 1
+      - name: ActionS Checkout  # Name of Step 1
         uses: actions/checkout@v2
         with:
-          path: master
+          path: master  # /home/runner/work/Android-APP/Android-APP/master

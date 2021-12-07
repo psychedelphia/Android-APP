@@ -26,3 +26,4 @@ jobs:
           python3 -m pip install --upgrade pip
           echo $USER
           ls -al
+          echo $HOME_DIR

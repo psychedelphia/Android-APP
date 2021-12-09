@@ -55,6 +55,7 @@ jobs:
           libgdbm-compat-dev \
           liblzma-dev \
           libffi-dev \
+          libstdc++6 \
           aidl
       - name: Install gstreamer for audio, video (optional)
         run: |

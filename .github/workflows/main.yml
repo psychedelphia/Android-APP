@@ -63,7 +63,7 @@ jobs:
           gstreamer1.0-plugins-good
       - name: Install buildozer
         run: |
-          pip install --upgrad buildozer
+          pip install --upgrade buildozer
       - name: Init Buildozer
         run: |
           buildozer init

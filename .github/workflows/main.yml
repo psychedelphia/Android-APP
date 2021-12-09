@@ -55,7 +55,6 @@ jobs:
           libgdbm-compat-dev \
           liblzma-dev \
           libffi-dev \
-          uuid-dev\
           libffi6
       - name: Install gstreamer for audio, video (optional)
         run: |

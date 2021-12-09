@@ -48,7 +48,6 @@ jobs:
           automake \
           libtool \
           openssl \
-          libsqlite3-dev\
           sqlite3 bzip2 \
           libbz2-dev \
           libssl-dev \

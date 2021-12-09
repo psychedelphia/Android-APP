@@ -54,7 +54,6 @@ jobs:
           libgdbm-dev \
           libgdbm-compat-dev \
           liblzma-dev \
-          libncursesw5-dev\
           libffi-dev \
           uuid-dev\
           libffi6

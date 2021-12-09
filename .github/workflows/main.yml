@@ -20,13 +20,10 @@ jobs:
           python3 -m pip install --upgrade pip
       - name: Install Cython 
         run: |
-          pip3 install --user --upgrade Cython==0.29.19 virtualenv
+          pip install --user --upgrade Cython==0.29.24 virtualenv
       - name: Export Android APK file
         run: |
           export PATH=$PATH:~/.local/bin/
-      - name: Install buildozer
-        run: |
-          pip install buildozer
       - name: Install necessary system packages
         run: |
           sudo apt-get update
@@ -45,13 +42,33 @@ jobs:
           libswscale-dev \
           libavformat-dev \
           libavcodec-dev \
-          zlib1g-dev
+          lld \
+          zlib1g-dev \
+          autoconf \
+          automake \
+          libtool \
+          openssl \
+          libsqlite3-dev\
+          sqlite3 bzip2 \
+          libbz2-dev \
+          libssl-dev \
+          libgdbm-dev \
+          libgdbm-compat-dev \
+          liblzma-dev \
+          libreadline-dev\
+          libncursesw5-dev\
+          libffi-dev \
+          uuid-dev\
+          libffi6
       - name: Install gstreamer for audio, video (optional)
         run: |
           sudo apt-get install -y \
           libgstreamer1.0 \
           gstreamer1.0-plugins-base \
           gstreamer1.0-plugins-good
+      - name: Install buildozer
+        run: |
+          pip install --upgrad buildozer
       - name: Init Buildozer
         run: |
           buildozer init
@@ -59,5 +76,4 @@ jobs:
         run: |
           cd ./master/src
           ls -al
-          buildozer -v android debug      
-
+          buildozer -v android debug

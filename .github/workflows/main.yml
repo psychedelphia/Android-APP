@@ -17,7 +17,7 @@ jobs:
           python-version: 3.7  # 3.6 , 3.7 or 3.8
       - name: Upgrade Pip
         run: |
-          ls - al
+          ls -al
           rm buildozer.spec
           cd ./master
           python creating_file.py

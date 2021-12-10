@@ -1,2 +1,2 @@
 s = input('licence: ')
-print(s)
+print('yes or no:', s)

@@ -73,9 +73,10 @@ jobs:
           pip install --upgrade buildozer
       - name: Init Buildozer
         run: |
+          cd ./master
           buildozer init
       - name: Make APK
         run: |
           ls -al
-          cd /src
+          cd ./master/src
           printf 'y\ny\n' | buildozer -v android debug

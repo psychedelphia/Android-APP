@@ -14,16 +14,18 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.7  # 3.6 or 3.7
+          python-version: 3.7  # 3.6 , 3.7 or 3.8
       - name: Upgrade Pip
         run: |
           python3 -m pip install --upgrade pip
       - name: Install Cython 
         run: |
-          pip install --user --upgrade Cython==0.29.25 virtualenv
+          pip install --user --upgrade Cython==0.29.24 virtualenv
       - name: Export Android APK file
         run: |
+          echo $PATH
           export PATH=$PATH:~/.local/bin/
+          echo $PATH
       - name: Install necessary system packages
         run: |
           sudo apt-get update

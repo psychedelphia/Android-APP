@@ -20,7 +20,7 @@ jobs:
           python3 -m pip install --upgrade pip
       - name: Install Cython 
         run: |
-          pip install --user --upgrade Cython==0.29.24 virtualenv
+          pip install --user --upgrade Cython==0.29.25 virtualenv
       - name: Export PATH
         run: |
           echo $PATH

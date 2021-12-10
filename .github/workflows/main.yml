@@ -17,6 +17,7 @@ jobs:
           python-version: 3.8  # 3.6 or 3.7
       - name: Input Test
         run: |
+          ls -al
           printf '\ny\n' | python test_licence.py
       - name: Upgrade Pip
         run: |

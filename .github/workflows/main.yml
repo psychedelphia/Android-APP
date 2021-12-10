@@ -5,8 +5,6 @@ jobs:
   build-android:
     name: Build for Android  # Name
     runs-on: ubuntu-latest  # OS
-    permissions:
-      issues: write 
 
     steps:
       - name: Actions Checkout

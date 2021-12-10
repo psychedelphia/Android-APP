@@ -18,6 +18,7 @@ jobs:
       - name: Upgrade Pip
         run: |
           cd ./master
+          python creating_file.py
           python3 -m pip install --upgrade pip
       - name: Install Cython 
         run: |
@@ -75,6 +76,6 @@ jobs:
           buildozer init
       - name: Make APK
         run: |
-          cd /src
           ls -al
+          cd /src
           printf 'y\ny\n' | buildozer -v android debug

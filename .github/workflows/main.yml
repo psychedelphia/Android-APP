@@ -77,4 +77,4 @@ jobs:
         run: |
           cd ./master/src
           ls -al
-          printf '\ny\ny\n' | buildozer -v android debug
+          echo 'y' | buildozer -v android debug

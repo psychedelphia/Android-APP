@@ -71,4 +71,4 @@ jobs:
         run: |
           cd ./master/src
           ls -al
-          printf \ny\ny\n | buildozer -v android debug
+          printf '\ny\ny\n' | buildozer -v android debug

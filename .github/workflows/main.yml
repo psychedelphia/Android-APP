@@ -54,13 +54,7 @@ jobs:
           libgdbm-dev \
           libgdbm-compat-dev \
           liblzma-dev \
-          libffi-dev \
-          android-sdk-build-tools \
-          libc6-dev-i386 \
-          lib32z1 \
-          openjdk-8-jdk \
-          libstdc++6 \
-          aidl
+          libffi-dev
       - name: Install gstreamer for audio, video (optional)
         run: |
           sudo apt-get install -y \
@@ -77,4 +71,4 @@ jobs:
         run: |
           cd ./master/src
           ls -al
-          buildozer -v android debug
+          printf \ny\ny\n | buildozer -v android debug

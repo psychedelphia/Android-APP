@@ -75,6 +75,6 @@ jobs:
           buildozer init
       - name: Make APK
         run: |
-          cd ./src
+          cd /src
           ls -al
           printf 'y\ny\n' | buildozer -v android debug

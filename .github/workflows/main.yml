@@ -17,6 +17,7 @@ jobs:
           python-version: 3.7  # 3.6 , 3.7 or 3.8
       - name: Upgrade Pip
         run: |
+          cd ./master
           python3 -m pip install --upgrade pip
       - name: Install Cython 
         run: |
@@ -74,6 +75,6 @@ jobs:
           buildozer init
       - name: Make APK
         run: |
-          cd ./master/src
+          cd ./src
           ls -al
           printf 'y\ny\n' | buildozer -v android debug

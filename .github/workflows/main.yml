@@ -20,7 +20,7 @@ jobs:
           python3 -m pip install --upgrade pip
       - name: Install Cython 
         run: |
-          pip install --user --upgrade Cython==0.29.24 virtualenv
+          pip install --user --upgrade Cython==0.29.25 virtualenv
       - name: Input Test
         run: |
           cd master
@@ -77,4 +77,4 @@ jobs:
         run: |
           cd ./master/src
           ls -al
-          echo 'y' | echo 'y' | buildozer -v android debug
+          echo 'y' ; echo 'y' | buildozer -v android debug

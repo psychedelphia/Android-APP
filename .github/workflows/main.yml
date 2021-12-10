@@ -19,6 +19,7 @@ jobs:
         run: |
           ls -al
           cd ./master
+          ls -al
           python creating_file.py
           python3 -m pip install --upgrade pip
       - name: Install Cython 

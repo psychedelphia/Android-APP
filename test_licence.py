@@ -1,4 +1,7 @@
 import cython
 print(cython.__version__)
-s = input('licence: ')
-print('yes or no:', s)
+print('licence')
+s = input('input---> ')
+print(s)
+s = input('input---> ')
+print(s)

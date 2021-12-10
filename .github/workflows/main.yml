@@ -45,7 +45,10 @@ jobs:
           libavformat-dev \
           libavcodec-dev \
           lld \
-          zlib1g-dev \
+          zlib1g-dev
+      - name: Install necessary system packages - 2
+        run: |
+          sudo apt-get install -y \
           autoconf \
           automake \
           libtool \

@@ -19,8 +19,8 @@ jobs:
         run: |
           cd master
           ls -al
-          printf '\ny\n' | python test_licence.py
-          echo '\ny\n' | python test_licence.py
+          printf 'y\n' | python test_licence.py
+          echo 'y\ny\n' | python test_licence.py
       - name: Upgrade Pip
         run: |
           python3 -m pip install --upgrade pip
@@ -77,4 +77,4 @@ jobs:
         run: |
           cd ./master/src
           ls -al
-          echo 'y' | buildozer -v android debug
+          echo 'y' | echo 'y' | buildozer -v android debug

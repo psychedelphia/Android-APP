@@ -24,6 +24,7 @@ jobs:
           python3 -m pip install --upgrade pip
       - name: Install Cython 
         run: |
+          cd ./master
           pip install --user --upgrade Cython==0.29.25 virtualenv
       - name: Export PATH
         run: |
@@ -32,6 +33,7 @@ jobs:
           echo $PATH
       - name: Install necessary system packages
         run: |
+          cd ./master
           sudo apt-get update
           sudo apt-get install -y \
           python3-pip \
@@ -52,6 +54,7 @@ jobs:
           zlib1g-dev
       - name: Install necessary system packages - 2
         run: |
+          cd ./master
           sudo apt-get install -y \
           autoconf \
           automake \
@@ -66,12 +69,14 @@ jobs:
           libffi-dev
       - name: Install gstreamer for audio, video (optional)
         run: |
+          cd ./master
           sudo apt-get install -y \
           libgstreamer1.0 \
           gstreamer1.0-plugins-base \
           gstreamer1.0-plugins-good
       - name: Install buildozer
         run: |
+          cd ./master
           pip install --upgrade buildozer
       - name: Init Buildozer
         run: |

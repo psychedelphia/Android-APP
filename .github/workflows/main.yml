@@ -84,10 +84,8 @@ jobs:
           ls -al
           cd ./master/src
           printf 'y\ny\n' | buildozer -v android debug
-      - name: Downloads
-        run: mkdir data
       - name: Upload Artifact GitHub Action
         uses: actions/upload-artifact@v2
         with: 
           name: Upload
-          path: data
+          path: ./master/src/bin

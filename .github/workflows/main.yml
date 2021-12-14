@@ -83,7 +83,7 @@ jobs:
         run: |
           ls -al
           cd ./master/src
-          printf 'y\ny\n' | buildozer -v android debug
+          printf 'y' | buildozer -v android debug
       - name: Upload Artifact GitHub Action
         uses: actions/upload-artifact@v2
         with: 

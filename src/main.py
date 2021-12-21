@@ -1,16 +1,22 @@
 import kivy
+
 kivy.require('2.0.0')
+
 from kivy.app import App
 from kivy.core.window import Window
 from kivy.clock import Clock
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
+
 Window.clearcolor = (.6, 1, .8, 1)
 Window.size = (563, 1001)
 Window.top, Window.left = 30, 800
+
+
 class FantasticApp(App):
     _init_mic, _init_sec, _init_min = 0, 0, 0
     _lab_items = 1
+    
     def _bt_start(self, bt_instance):
         if bt_instance.text == 'Start':
             # call _clock_call() every 0.01 seconds
@@ -19,6 +25,7 @@ class FantasticApp(App):
         else:
             self.event.cancel()
             bt_instance.text = 'Start'
+            
     def _bt_lab(self, bt_instance):
         if self._lab_items < 11:
             lab_items = '{}: {:0>2}:{:0>2}.{:0>2}'.format(self._lab_items,
@@ -30,6 +37,7 @@ class FantasticApp(App):
             self._lab_items += 1
         else:
             self.bt3.text = 'Max: You can not add the widget'
+            
     def _bt_reset(self, bt_instance):
         for i in self.bl_root.children[0:(self._lab_items - 1)]:
             self.bl_root.remove_widget(i)
@@ -37,6 +45,7 @@ class FantasticApp(App):
         self.bt3.text = 'Lab List'
         self._init_mic, self._init_sec, self._init_min = 0, 0, 0
         self._lab_items = 1
+        
     def _clock_call(self, clock_instance):
         self.bt2.text = '{:0>2}:{:0>2}.{:0>2}'.format(str(self._init_min),
                                                       str(self._init_sec),
@@ -53,25 +62,31 @@ class FantasticApp(App):
                     self._init_mic = 0
                     self._init_sec = 0
                     self._init_min = 0
+                    
     def build(self):
         # You can make this APP using CLASS
         # start and stop
         bt_top1 = Button(text='Start')
         bt_top1.bind(on_press=self._bt_start)
+        
         # Lab
         bt_top2 = Button(text='Lap')
         bt_top2.bind(on_press=self._bt_lab)
         bl_top = BoxLayout(size_hint=(1, None), height=150)
         bl_top.add_widget(bt_top1)
         bl_top.add_widget(bt_top2)
+        
         # reset
         bt1 = Button(text='Reset', size_hint=(1, None), height=150,
                      on_press=self._bt_reset)
+        
         # time
         self.bt2 = bt2 = Button(text='00:00.00', size_hint=(1, None),
                                 height=150, font_size=50)
+        
         # Lab List
         self.bt3 = bt3 = Button(text='Lab List')
+        
         # root BoxLayout
         self.bl_root = bl_root = BoxLayout(orientation='vertical')
         bl_root.add_widget(bl_top)
@@ -79,4 +94,5 @@ class FantasticApp(App):
         bl_root.add_widget(bt2)
         bl_root.add_widget(bt3)
         return bl_root
+    
 FantasticApp().run()

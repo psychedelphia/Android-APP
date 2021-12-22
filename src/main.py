@@ -9,8 +9,6 @@ from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 
 Window.clearcolor = (.6, 1, .8, 1)
-Window.size = (563, 1001)
-Window.top, Window.left = 30, 800
 
 
 class FantasticApp(App):

@@ -9,8 +9,6 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 
 Window.clearcolor = (.6, 1, .8, 1)
-Window.size = (563, 1001)
-Window.top, Window.left = 30, 800
 
 
 class FantasticApp(App):

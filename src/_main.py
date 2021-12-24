@@ -1,3 +1,9 @@
+'''
+Description
+===========
+Stop Watch
+'''
+
 import kivy
 
 kivy.require('2.0.0')

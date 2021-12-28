@@ -52,7 +52,7 @@ requirements = python3,hostpython3,kivy==2.0.0
 #icon.filename = %(source.dir)s/data/icon.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
-orientation = portrait
+orientation = all
 
 # (list) List of service to declare
 #services = NAME:ENTRYPOINT_TO_PY,NAME2:ENTRYPOINT2_TO_PY
@@ -68,7 +68,7 @@ orientation = portrait
 #osx.python_version = 3
 
 # Kivy version to use
-#osx.kivy_version = 1.9.1
+#osx.kivy_version = 2.0.0
 
 #
 # Android specific
@@ -85,22 +85,22 @@ fullscreen = 0
 #android.presplash_color = #FFFFFF
 
 # (list) Permissions
-#android.permissions = INTERNET
+android.permissions = INTERNET
 
 # (int) Target Android API, should be as high as possible.
-#android.api = 27
+android.api = 31
 
 # (int) Minimum API your APK will support.
-#android.minapi = 21
+android.minapi = 19
 
 # (int) Android SDK version to use
-#android.sdk = 20
+android.sdk = 27
 
 # (str) Android NDK version to use
-#android.ndk = 19b
+android.ndk = 19c
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
-#android.ndk_api = 21
+android.ndk_api = 21
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
 #android.private_storage = True
@@ -117,7 +117,7 @@ fullscreen = 0
 # (bool) If True, then skip trying to update the Android sdk
 # This can be useful to avoid excess Internet downloads or save time
 # when an update is due and you just want to test/build your package
-# android.skip_update = False
+android.skip_update = False
 
 # (bool) If True, then automatically accept SDK license
 # agreements. This is intended for automation only. If set to False,

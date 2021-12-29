@@ -13,6 +13,7 @@ from kivy.core.window import Window
 from kivy.clock import Clock
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
+from plyer import vibrator
 
 Window.clearcolor = (.6, 1, .8, 1)
 
@@ -40,9 +41,10 @@ class FantasticApp(App):
             self.bl_root.add_widget(bt_lab)
             self._lab_items += 1
         else:
-            self.bt3.text = 'Max: You can not add the widget'
+            self.bt3.text = kivy.kivy_base_dir
             
     def _bt_reset(self, bt_instance):
+        vibrator.vibrate(3)
         for i in self.bl_root.children[0:(self._lab_items - 1)]:
             self.bl_root.remove_widget(i)
         self.bt2.text = '00:00.00'

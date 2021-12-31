@@ -29,7 +29,7 @@ fullscreen = 0
 # (string) Presplash background color (for new android toolchain)
 android.presplash_color = #FFFFFF
 # (list) Permissions
-android.permissions = WRITE_EXTERNAL_STORAGE
+android.permissions = INTERNET,WRITE_EXTERNAL_STORAGE
 # (int) Target Android API, should be as high as possible.
 android.api = 31
 # (int) Minimum API your APK will support.

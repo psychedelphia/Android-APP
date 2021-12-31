@@ -8,8 +8,6 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 
-Window.clearcolor = (.6, 1, .8, 1)
-
 
 class FantasticApp(App):
     def _ti_validate(self, ti_instance):

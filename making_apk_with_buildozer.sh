@@ -10,7 +10,10 @@ pip install --upgrade Cython==0.29.26 virtualenv
 # Export PATH(buildozer webpage says)
 export PATH=$PATH:~/.local/bin/ 
 
-# Upgrade apt-get(pip with python3)
+# Ubuntu repositories(E: Unable to locate package)
+# sudo add-apt-repository universe
+
+# Upgrade apt-get
 sudo apt-get update
 
 # Google Colab max: 16
@@ -73,8 +76,20 @@ gstreamer1.0-plugins-good
 sudo apt-get install \
 openjdk-11-jdk
 
+# for kivyMD
+# install pillow
+pip install pillow
+
+# for kivyMD
+# install pillow
+pip install pygments
+
+# for kivyMD
+# install kivymd
+pip install https://github.com/kivymd/KivyMD/archive/master.zip
+
 # Install Buildozer
 pip install --upgrade buildozer
 
 # Buildozer Init
-buildozer init
+printf 'y' | buildozer init

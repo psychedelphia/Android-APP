@@ -76,23 +76,11 @@ gstreamer1.0-plugins-good
 sudo apt-get install \
 openjdk-11-jdk
 
-# for kivyMD
-# install pillow
-pip install pillow
-
-# for kivyMD
-# install pillow
-pip install pygments
-
-# for kivyMD
-# install kivymd
-pip install https://github.com/kivymd/KivyMD/archive/master.zip
-
 # Install Buildozer
 pip install --upgrade buildozer
 
 # Buildozer Init
-printf 'y' | buildozer init
+buildozer init
 
 # Buildozer debug mode
-printf 'y' | buildozer -v android debug
+buildozer -v android debug

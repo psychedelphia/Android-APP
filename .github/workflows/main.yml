@@ -82,7 +82,7 @@ jobs:
       - name: Make APK
         run: |
           cd ./master/src
-          printf 'y' | buildozer -v android debug 
+          buildozer -v android debug 
       - name: Upload Artifact GitHub Action
         uses: actions/upload-artifact@v2
         with: 

@@ -93,3 +93,6 @@ pip install --upgrade buildozer
 
 # Buildozer Init
 printf 'y' | buildozer init
+
+# Buildozer debug mode
+printf 'y' | buildozer -v android debug

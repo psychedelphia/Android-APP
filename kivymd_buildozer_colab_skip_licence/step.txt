@@ -1,7 +1,7 @@
 1. kivyMD
-1_1. !wget https://github.com/psychedelphia/Kivy_Android-App/blob/main/kivymd_buildozer_colab_skip_licence/main.py
-1_2. !wget https://github.com/psychedelphia/Kivy_Android-App/blob/main/kivymd_buildozer_colab_skip_licence/buildozer.spec
-1_3. !wget https://github.com/psychedelphia/Kivy_Android-App/blob/main/kivymd_buildozer_colab_skip_licence/making_apk.sh
+1_1. !wget https://raw.githubusercontent.com/psychedelphia/Kivy_Android-App/main/kivymd_buildozer_colab_skip_licence/main.py
+1_2. !wget https://raw.githubusercontent.com/psychedelphia/Kivy_Android-App/main/kivymd_buildozer_colab_skip_licence/buildozer.spec
+1_3. !wget https://raw.githubusercontent.com/psychedelphia/Kivy_Android-App/main/kivymd_buildozer_colab_skip_licence/making_apk.sh
 1_4. !chmod +x making_apk.sh
 1_5. !./making_apk.sh
 1_6. (you will see: stty 'standard input' ~ ~)

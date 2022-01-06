@@ -1,6 +1,6 @@
 1. kivy
 1_1. !wget https://raw.githubusercontent.com/psychedelphia/Kivy_Android-App/main/kivy_buildozer_colab/main.py
-1_2. !wget https://raw.githubusercontent.com/psychedelphia/Kivy_Android-App/main/kivy_buildozer_colab/buildozer.specv
+1_2. !wget https://raw.githubusercontent.com/psychedelphia/Kivy_Android-App/main/kivy_buildozer_colab/buildozer.spec
 1_3. !wget https://raw.githubusercontent.com/psychedelphia/Kivy_Android-App/main/kivy_buildozer_colab/making_apk.sh
 1_4. !chmod +x making_apk.sh
 1_5. !./making_apk.sh

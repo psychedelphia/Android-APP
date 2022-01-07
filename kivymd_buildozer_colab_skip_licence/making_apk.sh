@@ -89,11 +89,13 @@ openjdk-11-jdk
 pip install --upgrade buildozer
 
 # Buildozer Init(making buildozer.spec)
-expect -c "
+expect <(cat << EOF
 spawn buildozer init
-expect \"[y/n]?\" 
-send \"y\n\"
-exit 0"
+expect "Password:"
+send "y\n"
+interact
+EOF
+)
 
 # Buildozer debug mode(adb logcat)
 buildozer -v android debug deploy run logcat

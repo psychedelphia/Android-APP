@@ -93,7 +93,7 @@ expect <(cat << EOF
 timeout -1
 spawn buildozer init
 expect "Password:"
-send "y\n"
+send -h "y\n"
 interact
 EOF
 )

@@ -91,7 +91,7 @@ pip install --upgrade buildozer
 # Buildozer Init(making buildozer.spec)
 expect <(cat << EOF
 spawn buildozer init
-expect "[y/n]?"
+expect "n]?"
 send "y\r"
 interact
 EOF

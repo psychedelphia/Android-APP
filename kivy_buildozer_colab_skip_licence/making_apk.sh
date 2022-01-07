@@ -16,71 +16,76 @@ export PATH=$PATH:~/.local/bin/
 # Upgrade apt-get
 sudo apt-get update
 
-# Google Colab max: 16
+# apt-get: Colab max: 16 installation at once
 # Install necessary system packages - 1
 # required or not
 sudo apt-get install -y \
-python3-pip \
 python3 \
+python3-pip \
 python3-dev \
 python3-distutils
 
 # Install necessary system packages - 2
 # required or not
 sudo apt-get install -y \
+libtool \
 libsdl2-dev \
-libsdl2-image-dev \
-libsdl2-mixer-dev \
-libsdl2-ttf-dev \
-libportmidi-dev \
+libavcodec-dev \
 libswscale-dev \
 libavformat-dev \
-libavcodec-dev \
-libtool \
-lld
+libsdl2-ttf-dev \
+libportmidi-dev \
+libsdl2-image-dev \
+libsdl2-mixer-dev \
+libgdbm-compat-dev
 
 # Install necessary system packages - 3
 # required or not
 sudo apt-get install -y \
+libtinfo5 \
 libbz2-dev \
 libssl-dev \
-libgdbm-dev \
-libgdbm-compat-dev \
-liblzma-dev \
 libffi-dev \
-libtinfo5 \
+libgdbm-dev \
+liblzma-dev \
+libgstreamer1.0 \
 libncurses5-dev \
 libncursesw5-dev \
-libgstreamer1.0
+gstreamer1.0-plugins-base \
+gstreamer1.0-plugins-good \
+gcc \
+lld \
+cmake
 
 # Install necessary system packages - 4
 # required or not
 sudo apt-get install -y \
-build-essential \
 git \
+zip \
+ant \
+patch \
+unzip \
+bzip2 \
+ccache \
 ffmpeg \
-zlib1g-dev \
+openssl \
+sqlite3 \
 autoconf \
 automake \
-openssl \
-sqlite3 bzip2 \
-zip \
-unzip \
+zlib1g-dev \
 pkg-config \
-cmake \
-gstreamer1.0-plugins-base \
-gstreamer1.0-plugins-good
+build-essential
 
 # Install necessary system packages - 5
-# required or not
+# required or not : check jdk-version with linux-version
 sudo apt-get install \
 openjdk-11-jdk
 
-# Install Buildozer
+# Install Buildozer(stable version)
 pip install --upgrade buildozer
 
-# Buildozer Init
-printf 'y' | buildozer init
+# Buildozer Init(making buildozer.spec)
+buildozer init
 
-# Buildozer debug mode
-printf 'y' | buildozer -v android debug
+# Buildozer debug mode(adb logcat)
+buildozer -v android debug deploy run logcat

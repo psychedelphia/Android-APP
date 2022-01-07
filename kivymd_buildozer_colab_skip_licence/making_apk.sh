@@ -19,7 +19,9 @@ sudo apt-get update
 # Install expect
 # (first :[y/n]?, second: [y/n]?) -> full: Are you sure you want to continue [y/n]?
 # apt-get install expect
-# expect -c     
+# expect -c
+# expect \"[y/n]?\" 
+# send \"y\n\"
 
 # apt-get: Colab max: 16 installation at once
 # Install necessary system packages - 1

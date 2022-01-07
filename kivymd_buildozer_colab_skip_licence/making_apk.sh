@@ -92,7 +92,7 @@ pip install --upgrade buildozer
 expect <(cat << EOF
 spawn buildozer init
 expect "[y/n]?"
-send "y\n"
+send "y\r"
 interact
 EOF
 )
@@ -101,7 +101,7 @@ EOF
 expect <(cat << EOF
 spawn buildozer -v android debug deploy run logcat
 expect "[y/n]?"
-send "y\n"
+send "y\r"
 interact
 EOF
 )

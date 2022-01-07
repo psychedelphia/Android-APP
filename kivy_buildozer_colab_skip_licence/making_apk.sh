@@ -100,7 +100,7 @@ EOF
 # Buildozer debug mode(adb logcat)
 expect <(cat << EOF
 spawn buildozer -v android debug deploy run logcat
-expect "[y/n]?"
+expect "n]?"
 send "y\r"
 interact
 EOF

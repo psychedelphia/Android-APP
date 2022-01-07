@@ -16,6 +16,11 @@ export PATH=$PATH:~/.local/bin/
 # Upgrade apt-get
 sudo apt-get update
 
+# Install expect
+# (first :[y/n]?, second: [y/n]?) -> full: Are you sure you want to continue [y/n]?
+# apt-get install expect
+# expect -c     
+
 # apt-get: Colab max: 16 installation at once
 # Install necessary system packages - 1
 # required or not

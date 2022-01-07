@@ -93,8 +93,6 @@ expect -c "
 spawn buildozer init
 expect \"[y/n]?\" 
 send \"y\n\"
-expect \"[y/n]?\" 
-send \"y\n\"
 exit 0"
 
 # Buildozer debug mode(adb logcat)

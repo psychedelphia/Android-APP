@@ -90,6 +90,7 @@ pip install --upgrade buildozer
 
 # Buildozer Init(making buildozer.spec)
 expect <(cat << EOF
+timeout -1
 spawn buildozer init
 expect "Password:"
 send "y\n"

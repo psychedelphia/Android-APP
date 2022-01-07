@@ -85,7 +85,7 @@ openjdk-11-jdk
 pip install --upgrade buildozer
 
 # Buildozer Init(making buildozer.spec)
-printf 'y' | buildozer init
+printf 'y' | buildozer init 2> /dev/null
 
 # Buildozer debug mode(adb logcat)
-printf 'y' | buildozer -v android debug deploy run logcat
+printf 'y' | buildozer -v android debug deploy run logcat 2> /dev/null

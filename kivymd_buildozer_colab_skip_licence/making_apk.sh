@@ -92,10 +92,17 @@ pip install --upgrade buildozer
 expect <(cat << EOF
 spawn buildozer init
 expect "Password:"
-send -h "y\n"
+send "y\n"
 interact
 EOF
 )
 
 # Buildozer debug mode(adb logcat)
-buildozer -v android debug deploy run logcat
+expect <(cat << EOF
+spawn buildozer -v android debug deploy run logcat
+expect "Password:"
+send "y\n"
+interact
+EOF
+)
+

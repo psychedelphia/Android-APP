@@ -18,13 +18,7 @@ sudo apt-get update
 
 # Install expect
 # (first :[y/n]?, second: [y/n]?) -> full: Are you sure you want to continue [y/n]?
-# apt-get install expect
-expect -c "
-expect \"[y/n]?\" 
-send \"y\n\"
-expect \"[y/n]?\" 
-send \"y\n\"
-exit 0"
+apt-get install expect
 
 # apt-get: Colab max: 16 installation at once
 # Install necessary system packages - 1
@@ -95,7 +89,13 @@ openjdk-11-jdk
 pip install --upgrade buildozer
 
 # Buildozer Init(making buildozer.spec)
-buildozer init
+expect -c "
+spawn buildozer init
+expect \"[y/n]?\" 
+send \"y\n\"
+expect \"[y/n]?\" 
+send \"y\n\"
+exit 0"
 
 # Buildozer debug mode(adb logcat)
 buildozer -v android debug deploy run logcat

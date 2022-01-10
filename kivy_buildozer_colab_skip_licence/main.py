@@ -8,7 +8,7 @@ from kivy.uix.button import Button
 
 class FantasticApp(App):
     def build(self):
-        return Button(text='test')
+        return Button(text='Hello world app')
 
 
 FantasticApp().run()

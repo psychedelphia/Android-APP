@@ -8,7 +8,7 @@ from kivymd.uix.button import MDFlatButton
 
 class FantasticApp(MDApp):
     def build(self):
-        return MDFlatButton(text='test')
+        return MDFlatButton(text='Hello world app')
 
 
 FantasticApp().run()

@@ -5,7 +5,7 @@
 python3 -m pip install --upgrade pip
 
 # Install Cython(latest version recommended)
-pip install --upgrade Cython==0.29.26 virtualenv 
+pip install --upgrade Cython==0.29.27 virtualenv 
 
 # Export PATH(buildozer webpage says)
 export PATH=$PATH:~/.local/bin/ 
@@ -77,7 +77,7 @@ pkg-config \
 build-essential
 
 # Install necessary system packages - 5
-# required or not : check jdk-version with linux-version
+# required or not : check jdk-version
 sudo apt-get install \
 openjdk-11-jdk
 

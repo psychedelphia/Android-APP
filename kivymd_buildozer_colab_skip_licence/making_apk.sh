@@ -1,17 +1,20 @@
 #!/bin/bash 
 
 # Upgrade Pip(pip with python3)
-# builozer(build with 3.7, 3.8)
 python3 -m pip install --upgrade pip
+
+# Show cython latest version
+pip_show_cython=$(pip show cython | grep 'Version')
+echo -e "\n\n\n==============================="
+echo 'Cython Latest' ${pip_show_cython}
+echo -e "===============================\n\n\n"
+# echo "${pip_show_cython:9}"
 
 # Install Cython(latest version recommended)
 pip install --upgrade Cython==0.29.27 virtualenv 
 
 # Export PATH(buildozer webpage says)
 export PATH=$PATH:~/.local/bin/ 
-
-# Ubuntu repositories(E: Unable to locate package)
-# sudo add-apt-repository universe
 
 # Upgrade apt-get
 sudo apt-get update
@@ -80,7 +83,7 @@ pkg-config \
 build-essential
 
 # Install necessary system packages - 5
-# required or not : check jdk-version
+# required or not
 sudo apt-get install \
 openjdk-11-jdk
 

@@ -3,15 +3,8 @@
 # Upgrade Pip(pip with python3)
 python3 -m pip install --upgrade pip
 
-# Show cython latest version
-pip_show_cython=$(pip show cython | grep 'Version')
-echo -e "\n\n\n==============================="
-echo 'Cython Latest' ${pip_show_cython}
-echo -e "===============================\n\n\n"
-# echo "${pip_show_cython:9}"
-
 # Install Cython(latest version recommended)
-pip install --upgrade Cython==0.29.27 virtualenv 
+pip install --upgrade Cython virtualenv 
 
 # Export PATH(buildozer webpage says)
 export PATH=$PATH:~/.local/bin/ 

@@ -84,4 +84,4 @@ pip install --upgrade buildozer
 buildozer init
 
 # Buildozer debug mode(adb logcat)
-buildozer -v android debug deploy run logcat
+buildozer -v android debug deploy
